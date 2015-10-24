@@ -1,5 +1,6 @@
 package com.example.mitrikyle.jambuds;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class JamListActivity extends AppCompatActivity {
 // muh comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,31 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.create_jam){
+            startActivity(new Intent(getApplicationContext(), CreateJamActivity.class));
+            return true;
+        }
+
+        if (id == R.id.jam){
+            startActivity(new Intent(getApplicationContext(), JamActivity.class));
+            return true;
+        }
+
+        if (id == R.id.login){
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            return true;
+        }
+
+        if (id == R.id.main){
+            startActivity(new Intent(getApplicationContext(), JamListActivity.class));
+            return true;
+        }
+
+        if (id == R.id.profile){
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
             return true;
         }
 
