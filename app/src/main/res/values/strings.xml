@@ -12,4 +12,7 @@
     <string name="enter_location_message">Where do you want to jam?</string>
     <string name="enter_description_message">Brief description (optional)</string>
     <string name="button_submit">Submit</string>
+    <string name="facebook_app_id">1071035792931017</string>
+    <string name="title_activity_experience">ExperienceActivity</string>
+    <string name="title_activity_my_jams">MyJamsActivity</string>
 </resources>
