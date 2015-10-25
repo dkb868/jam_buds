@@ -1,20 +1,15 @@
 package com.example.mitrikyle.jambuds;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,39 +17,42 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class JamListFragment extends ListFragment {
+public class ExperienceListFragment extends ListFragment {
 
-    private static final String TAG =  "JamListFragment";
+
+    private static final String TAG =  "ExperienceListFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setupAdapter();
+        super.onCreate(savedInstanceState);
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Intent jamIntent = new Intent(getActivity(), JamActivity.class);
-        
     }
 
-    private class JamItemAdapter extends ArrayAdapter<Jam> {
-        public JamItemAdapter(List<Jam> jamItems){
-            super(getActivity(), 0, jamItems);
+    private class ExperienceItemAdapter extends ArrayAdapter<String> {
+        public ExperienceItemAdapter(List<String> experienceItems){
+            super(getActivity(), 0, experienceItems);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent){
             if(convertView == null){
                 convertView = getActivity().getLayoutInflater()
-                        .inflate(R.layout.list_item_jam, null);
+                        .inflate(R.layout.list_item_experience, null);
             }
 
-            Jam item = getItem(position);
+            String item = getItem(position);
 
-            TextView textView = (TextView) convertView.findViewById(R.id.jamTitleTextview);
-            textView.setText(item.getTitle());
+            TextView textView = (TextView) convertView.findViewById(R.id.instrumentTextView);
+            textView.setText(item);
+            CheckBox beginnerCheckBox = (CheckBox)convertView.findViewById(R.id.beginnerCheckBox);
+            CheckBox intermediateCheckBox = (CheckBox)convertView.findViewById(R.id.intermediateCheckBox);
+            CheckBox advancedCheckBox = (CheckBox)convertView.findViewById(R.id.advancedCheckBox);
+
             return convertView;
         }
     }
@@ -84,20 +82,12 @@ public class JamListFragment extends ListFragment {
             }
         });
     } */
-        ParseQuery<Jam> query = ParseQuery.getQuery(Jam.class);
-        query.findInBackground(new FindCallback<Jam>() {
-            @Override
-            public void done(List<Jam> objects, ParseException e) {
-                JamItemAdapter adapter = new JamItemAdapter(objects);
-                setListAdapter(adapter);
-            }
-        });
-        /*
         ArrayList<String> stuff = new ArrayList<String>();
-        stuff.add("Smarties");
-        stuff.add("Electric Scooter");
+        stuff.add("Test");
+        stuff.add("Rekt");
         stuff.add("Piano and Viola");
-        setListAdapter(new JamItemAdapter(stuff)); */
+        setListAdapter(new ExperienceItemAdapter(stuff));
     }
+
 
 }
