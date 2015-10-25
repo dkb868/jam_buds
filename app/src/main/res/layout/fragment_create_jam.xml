@@ -6,50 +6,61 @@
     tools:showIn="@layout/activity_create_jam"
     tools:context="com.example.mitrikyle.jambuds.CreateJamActivityFragment">
 
-    <TextView
+    <TextView android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/enter_title_message"
-        android:id="@+id/title" />
+        android:text="Title" />
 
     <EditText android:id="@+id/enter_title_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <TextView android:id="@+id/other_instruments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/enter_other_instruments_message"
-        android:id="@+id/other_instruments" />
+        android:text="Looking for (Instruments)" />
 
     <EditText android:id="@+id/enter_other_instruments_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <TextView android:id="@+id/genres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/enter_genre_message"
-        android:id="@+id/genres" />
+        android:text="Genre(s)" />
 
     <EditText android:id="@+id/enter_genre_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <TextView android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/enter_location_message"
-        android:id="@+id/location" />
+        android:text="Location" />
 
 
     <EditText android:id="@+id/enter_location_message"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/date"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Date" />
+
+    <Button android:id="@+id/time"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Time" />
+
     <EditText android:id="@+id/enter_description_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,6 +68,5 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_submit"
-        android:onClick="submitMessage"/>
+        android:text="@string/button_submit" />
 </LinearLayout>
